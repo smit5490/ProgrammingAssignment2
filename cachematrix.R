@@ -3,10 +3,10 @@
 ## makeCacheMatrix takes an invertible matrix as an input an returns a list of functions that set and retrieve the input
 ## matrix and it's inverse (if it has been computed and cached).
 
-makeCacheMatrix <- function(x = matrix()) {         #Input default is an empty matrix
-  m <- matrix()                                     #Set inverse, m, to an emptry matrix
+makeCacheMatrix <- function(x = matrix()) {         #Input default is an empty matrix. Input must be an invertible matrix
+  m <- matrix()                                     #Set inverse, m, to an empty matrix
   set <- function(y) {                              #set function reinitializes x and m in makeCacheMatrix(x) env. 
-    x <<- y
+    x <<- y                                         #set function not required, but kept for completeness. 
     m <<- matrix()
   }
   get <- function() x                               #get function retrieves x
